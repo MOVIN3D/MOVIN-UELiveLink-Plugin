@@ -5,8 +5,8 @@ Receives real-time motion capture data from **MOVIN Studio** via UDP and feeds i
 ## Features
 
 - Streams skeleton and animation data from MOVIN Studio over UDP
-- Supports multiple characters simultaneously on a single port (each identified by subject name)
 - Automatic skeleton change detection when switching characters
+- Supports multi-character setups by using multiple MOVIN Studio instances on different UDP ports
 - Works in both the **Editor** and **Packaged Games**
 - Configurable UDP port (default: `11236`)
 
@@ -118,7 +118,13 @@ The plugin expects binary UDP packets from MOVIN Studio in the following layout.
 
 ## Multiple Characters
 
-The plugin supports streaming multiple characters simultaneously on the same UDP port. Each character must have a **unique subject name** in the MOVIN Studio packets. They will appear as separate subjects in the LiveLink panel, and each can be assigned to a different Skeletal Mesh via its own Animation Blueprint.
+To stream multiple characters at the same time, use **one Tracin device and one MOVIN Studio instance per character**.
+
+In Unreal, create multiple **MOVIN LiveLink Source** entries and assign each one a different UDP port such as `11236`, `11237`, and so on.
+
+On each computer connected to a Tracin device, run **MOVIN Studio** and set its streaming port to match the corresponding LiveLink source port in Unreal.
+
+With this setup, each MOVIN LiveLink source receives one character stream on its own port, allowing multiple characters to be used in the same Unreal project.
 
 ## Logging
 
