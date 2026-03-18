@@ -124,6 +124,10 @@ In Unreal, create multiple **MOVIN LiveLink Source** entries and assign each one
 
 On each computer connected to a Tracin device, run **MOVIN Studio** and set its streaming port to match the corresponding LiveLink source port in Unreal.
 
+In **MOVIN Studio**, set the **Streaming Host** field to the IP address of the computer running the Unreal project.
+
+The computers running **Tracin + MOVIN Studio** and the computer running **Unreal** must be on the same network. They can be connected through the same router or Wi-Fi network.
+
 With this setup, each MOVIN LiveLink source receives one character stream on its own port, allowing multiple characters to be used in the same Unreal project.
 
 ## Logging
