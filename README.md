@@ -49,9 +49,10 @@ To drive a Skeletal Mesh character with LiveLink data:
 1. **Create an Animation Blueprint** for your character's Skeleton
 2. In the **AnimGraph**, add a **Live Link Pose** node
 3. Set the **Live Link Subject Name** to match the character name sent by MOVIN Studio (e.g. `Ch14`)
-4. *(Optional)* If your skeleton's bone names don't match MOVIN Studio's bone names, create a **Live Link Retarget Asset** to define the mapping
-5. Connect the Live Link Pose output to the **Output Pose**
-6. Assign the Animation Blueprint to your Skeletal Mesh Actor
+4. If MOVIN Studio is streaming an **Actor**, receive it in Unreal using the `movinman.fbx` model
+5. If MOVIN Studio is streaming a **character model**, the model imported into Unreal must be the exact same `.fbx` used in MOVIN Studio
+6. Connect the Live Link Pose output to the **Output Pose**
+7. Assign the Animation Blueprint to your Skeletal Mesh Actor
 
 ## Packaged Game Setup
 
