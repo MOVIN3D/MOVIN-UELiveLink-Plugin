@@ -15,9 +15,12 @@ Receives real-time motion capture data from **MOVIN Studio** via UDP and feeds i
 - Unreal Engine **5.3+** (5.3 ~ 5.7)
 - Windows 64-bit
 - MOVIN Studio (sending motion capture data)
-- A **C++ Unreal project** (not a Blueprint-only project)
+- If you are using the plugin **from source**, a **C++ Unreal project** is recommended
+- **Blueprint-only projects** can also use the plugin if a **prebuilt plugin** is provided for the matching Unreal Engine version and platform
 
 ## Installation
+
+### Option 1: Use the plugin from source
 
 Copy the `MOVINLiveLinkPlugin` folder into your project's `Plugins/` directory:
 
@@ -46,6 +49,19 @@ If the plugin does not build automatically:
 7. Click **Build**
 
 After the build completes, reopen the project in Unreal Editor.
+
+### Option 2: Use a prebuilt plugin in a Blueprint-only project
+
+You can also use the plugin in a **Blueprint-only project** if the plugin has already been built for the same Unreal Engine version and platform.
+
+Copy the prebuilt plugin into your project's `Plugins/` folder and keep these files and folders:
+
+- `MOVINLiveLink.uplugin`
+- `Binaries/`
+- `Config/`
+- `Resources/`
+
+`Intermediate/` is not required for distribution in this case.
 
 ## Quick Start (Editor)
 
