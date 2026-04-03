@@ -15,6 +15,12 @@ bool UMOVINLiveLinkFunctionLibrary::AddMOVINLiveLinkSource(int32 Port)
 		return false;
 	}
 
+	if (FMOVINLiveLinkSource::IsPortInUse(Port))
+	{
+		UE_LOG(LogMOVINLiveLink, Warning, TEXT("AddMOVINLiveLinkSource: A MOVIN LiveLink source on port %d already exists"), Port);
+		return false;
+	}
+
 	ILiveLinkClient& LiveLinkClient = IModularFeatures::Get().GetModularFeature<ILiveLinkClient>(ILiveLinkClient::ModularFeatureName);
 	const TSharedPtr<FMOVINLiveLinkSource> NewSource = MakeShared<FMOVINLiveLinkSource>(Port);
 	const bool bSuccess = LiveLinkClient.AddSource(NewSource).IsValid();
