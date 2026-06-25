@@ -12,11 +12,13 @@ Receives real-time motion capture data from **MOVIN Studio v2.1.1+** via UDP and
 
 ## Requirements
 
-- Unreal Engine **5.3+** (5.3 ~ 5.7)
+- Unreal Engine **5.3+** (5.3 ~ 5.8)
 - Windows 64-bit
 - MOVIN Studio (sending motion capture data)
 - If you are using the plugin **from source**, a **C++ Unreal project** is recommended
 - **Blueprint-only projects** can also use the plugin if a **prebuilt plugin** is provided for the matching Unreal Engine version and platform
+
+> **UE 5.8 compatibility:** Version `1.0.1` has been verified with Unreal Engine 5.8 on Win64 using Unreal's `BuildPlugin` workflow.
 
 ## Installation
 
